@@ -1,6 +1,10 @@
-import { LoadTodos, SaveTodos } from "./storage";
+import { LoadTodos, SaveTodos } from "./storage.js";
 
 let todos = [];
+
+export function InitTodos() {
+  todos = LoadTodos();
+}
 
 export function AddTodo(text) {
   const newTodo = {
@@ -10,12 +14,12 @@ export function AddTodo(text) {
   };
 
   todos.push(newTodo);
-  SaveTodos(newTodo);
+  SaveTodos(todos);
   LoadTodos();
   console.log(todos);
   return todos;
 }
 
-export function DeleteTodo(id) {}
+export function DeleteTodo(id) { }
 
-export function GetTodos() {}
+export function GetTodos() { }
