@@ -6,5 +6,3 @@ export function LoadTodos() {
 export function SaveTodos(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
-
-LoadTodos();

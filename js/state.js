@@ -20,6 +20,19 @@ export function AddTodo(text) {
   return todos;
 }
 
-export function DeleteTodo(id) { }
+export function DeleteTodo(id) {
+  todos = todos.filter((todo) => todo.id !== id);
+  SaveTodos(todos);
+  return todos;
+}
 
-export function GetTodos() { }
+export function ToggleTodo(id) {
+  const todo = todos.find((todo) => todo.id === id);
+  todo.isDone = !todo.isDone;
+  SaveTodos(todos);
+  return todos;
+}
+
+export function GetTodos() {
+  return todos;
+}
